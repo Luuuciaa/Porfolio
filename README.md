@@ -84,7 +84,7 @@ Página web en desarrollo para un complejo de departamentos en Mar Azul. Actualm
 
 ## 📱 Responsive Design
 
-El portfolio está diseñado para adaptarse a diferentes tamaños de pantalla, incluyendo computadoras, tablets y dispositivos móviles.
+El portfolio está diseñado para adaptarse a diferentes tamaños de pantalla, incluyendo computadoras  Y dispositivos móviles.
 
 ## 📫 Contacto
 

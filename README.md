@@ -48,6 +48,7 @@ Portfolio/
 │   ├── Departamentos Mar Azul.png
 │   ├──desarrollo.png
 │   └── favicon.ico
+    └──   Hotel San Remo.png
 |   └──presentacion.png
 
 │
@@ -75,6 +76,10 @@ Sitio web para promocionar un complejo de departamentos, con información sobre 
 ### 🚲 Marvistel
 
 Sitio web para una bicicletería, desarrollado utilizando HTML, CSS y Bootstrap.
+
+🏨 Hotel San Remo World
+
+Sitio web de un hotel  en San Clemente del Tuyú, con información sobre habitaciones, servicios, promociones, ubicación y contacto.
 
 
 ### 🌊 Departamentos Mar Azul

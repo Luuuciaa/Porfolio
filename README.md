@@ -77,9 +77,6 @@ Sitio web para promocionar un complejo de departamentos, con información sobre 
 
 Sitio web para una bicicletería, desarrollado utilizando HTML, CSS y Bootstrap.
 
-### 🏨 Hotel San Remo World
-
-Sitio web para un hotel de San Clemente del Tuyú, con información sobre habitaciones, servicios, promociones, ubicación y contacto.
 
 ### 🌊 Departamentos Mar Azul
 

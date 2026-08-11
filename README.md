@@ -15,7 +15,6 @@ Me gusta crear sitios web modernos, funcionales y adaptados a diferentes disposi
 * HTML5
 * CSS3
 * JavaScript
-* React
 * Git
 * GitHub
 

@@ -1,0 +1,750 @@
+/*Elimina los margenes y paddings que agrega el navegador por defecto*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Permite un desplazamiento suave al navegar entre secciones*/
+    background-color: #0d0d0d;
+}
+
+/* Estilo general para el cuerpo */
+body {
+    overflow-x: hidden;
+    /* Evita el scroll horizontal */
+    /*background-color: black;*/
+    font-family: 'Poppins', sans-serif;
+
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+
+/**********************************INICIO***************************************/
+.titulo span {
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+    line-height: 1.2;
+    margin-right: 50px;
+    color: white;
+}
+
+.nombre {
+    font-size: 35px;
+    font-family: 'Allura', cursive;
+    margin-top: 15px;
+}
+
+.subtitulo {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 12px;
+
+}
+
+.nav_toggle {
+    display: none;
+    /*Boton de menú hambueguesa está oculto en escritorio*/
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: 200px;
+
+}
+
+.nav li {
+    margin: 25px;
+
+
+}
+
+.nav a {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.nav a:hover {
+    color: aqua;
+}
+
+/*PARA CELULARES*/
+@media (max-width:768px) {
+
+    .nombre {
+        font-size: 25px;
+    }
+
+    .subtitulo {
+        font-size: 10px;
+    }
+
+    /* Fija el encabezado en la parte superior de la pantalla */
+    header {
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0d0d0d;
+        z-index: 1000;
+        /* Hace que el header quede por encima del contenido */
+    }
+
+    /* Agrega un espacio superior al contenido para que no quede oculto debajo del header fijo */
+    body {
+        padding-top: 80px;
+        /* Debe coincidir aproximadamente con la altura del header */
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav li {
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 13px;
+
+    }
+
+    .nav_toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        margin-right: 20px;
+    }
+
+    .nav_toggle span {
+        width: 20px;
+        height: 3px;
+        background: aqua;
+        border-radius: 2px;
+    }
+
+    .nav_items {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        align-items: center;
+        padding-top: 50px !important;
+        background-color: #0d0d0d;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        transition: left .3s;
+    }
+
+    .nav_items.open {
+        left: 0;
+    }
+
+    .nav_items li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        width: 90%;
+        margin: 8px auto;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .nav_items a {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+
+    }
+
+    /*TRANSFORMA EL ÍCONO DE HAMBURGUESA EN UNA CRUZ Y SE ACTIVA CON LA CLASE .ACTIVE*/
+
+    /* Rota la primera línea 45 grados y la mueve un poco, formando la primera parte de la cruz*/
+    .nav_toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    /*Oculta la línea del medio. Así solo quedan las líneas de arriba y abajo, que cruzadas forman la X*/
+    .nav_toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    /*Rota la tercera línea en dirección opuesta, formando la otra parte de la X*/
+    .nav_toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+
+/***************************PRESENTACIÓN***********************************/
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 50px 80px;
+}
+
+.foto {
+    display: flex;
+    justify-content: center;
+}
+
+.foto img {
+    width: 350px;
+    height: auto;
+    border: 5px solid rgb(89, 170, 170);
+}
+
+.contenido {
+    width: 50%;
+}
+
+.contenido h2,
+.enlaces-internos a {
+    font-size: 15px;
+}
+
+.contenido h1,
+.formacion h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    /* Muy suave */
+}
+
+.contenido h2 {
+    color: aqua;
+    margin-top: 15px;
+
+}
+
+.contenido p,
+.item-formacion p {
+    margin-top: 15px;
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    /* Más apagado */
+}
+
+/*PARA CELULARES*/
+@media (max-width:768px) {
+    .presentacion {
+        flex-direction: column;
+        text-align: center;
+        margin: 40px 20px;
+        gap: 20px;
+    }
+
+    .contenido {
+        width: 100%;
+    }
+
+    .foto img {
+        width: 250px;
+        max-width: 100%;
+    }
+
+    .contenido h1 {
+        font-size: 25px;
+    }
+
+    .contenido h2 {
+        font-size: 13px;
+    }
+
+    .contenido p {
+        font-size: 12px;
+        max-width: 100%;
+    }
+
+    .botones {
+        margin-top: 18px;
+        font-size: 12px;
+
+    }
+
+
+}
+
+
+/****************************SOBRE MI***********************************/
+
+.sobremi {
+    margin: 35px;
+    background-color: rgba(79, 211, 211, 0.10);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(79, 211, 211, 0.3);
+    box-shadow: 0 0 20px rgba(79, 211, 211, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.texto-sobremi {
+    flex: 1;
+}
+
+.sobremi h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    /* Muy suave */
+    font-weight: 600;
+}
+
+.sobremi h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: aqua;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.sobremi p {
+    width: 100%;
+    line-height: 1.8;
+    margin-top: 20px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    /* Más apagado */
+    font-weight: 500;
+}
+
+.imagen-desarrollo img {
+    width: 600px;
+    height: 450px;
+    object-fit: cover;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid rgba(79, 211, 211, 0.3);
+}
+
+/*PARA CELULARES*/
+@media (max-width:768px) {
+
+    .sobremi {
+        margin: 60px 20px 15px;
+        /*achica el espacio de los costados.*/
+        padding: 25px 20px;
+        /*reduce el espacio interno.*/
+        flex-direction: column;
+        gap: 20px;
+        /*reduce la separación.*/
+        text-align: center;
+    }
+
+    .sobremi h2 {
+        font-size: 25px;
+    }
+
+    .sobremi h2::after {
+        margin: 10px auto 0;
+        width: 50px;
+    }
+
+    .sobremi p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .imagen-desarrollo img {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+/****************************FORMACIÓN*********************************/
+
+.contenedor-formacion,
+.contenedor-tecnologias {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.formacion h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 60px;
+    color: rgba(255, 255, 255, 0.8);
+    /* Muy suave */
+}
+
+.formacion h2::after,
+.tecnologias h2::after,
+.proyectos h2::after,
+.contacto h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: aqua;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin: 10px auto 0;
+    /* centra la línea debajo del título */
+}
+
+/* Círculo del icono */
+.icono {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #1b1b1b;
+    border: 1px solid aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aqua;
+    font-size: 22px;
+
+}
+
+.item-formacion i {
+    color: grey;
+    width: 220px;
+    text-align: center;
+
+}
+
+.item-formacion span {
+    color: aqua;
+    font-size: 13px;
+}
+
+.item-formacion h3 {
+    font-size: 17px;
+}
+/*PARA CELULARES*/
+@media (max-width:768px) {
+    .contenedor-formacion{
+       flex-direction: column;
+    }
+    .formacion h2{
+        margin-bottom: 25px;
+    }
+    .icono{
+        font-size: 18px;
+        width: 45px;
+        height: 45px;
+    }
+    .item-formacion h3{
+        font-size: 15px;
+    }
+    .item-formacion span{
+        font-size: 12px;
+    }
+}
+/***************************TECNOLOGÍAS********************************/
+.tecnologias h2,
+.proyectos h2 {
+    font-family: Cambria, Cochin, Georgia, serif;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contenedor-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+.tecnologia {
+    width: 200px;
+    height: 120px;
+    background-color: rgba(79, 211, 211, 0.10);
+    border: 1px solid rgba(79, 211, 211, 0.3);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.tecnologia i {
+    color: aqua;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+
+.tecnologia span {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+}
+
+
+/*PARA CELULARES*/
+@media (max-width:768px) {
+
+    .tecnologias h2,
+    .proyectos h2 ,.formacion h2 {
+        font-size: 25px;
+    }
+     .tecnologias h2::after,
+    .proyectos h2::after,.formacion h2::after{
+        width: 50px;
+    }
+    .tecnologia{
+        width: 150px;
+        height: 100px;
+    }
+    .tecnologia i{
+        font-size:25px;
+    }
+    .tecnologia span{
+        font-size: 15px;
+    }
+}
+ /************************************PROYECTOS*****************************************/
+.proyectos {
+    margin: 50px 35px;
+}
+
+.proyectos h2 {
+    margin-bottom: 50px;
+}
+
+.contenedor-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.proyecto {
+    width: 550px;
+    background: rgba(79, 211, 211, .08);
+    border: 1px solid rgba(79, 211, 211, .25);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 30px;
+    text-align: center;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyecto h3 {
+    text-transform: uppercase;
+}
+
+.proyecto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(79, 211, 211, .2);
+}
+
+.proyecto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.proyecto h3 {
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.proyecto p {
+    color: rgba(255, 255, 255, .75);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botones a {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid aqua;
+    color: aqua;
+    transition: .3s;
+}
+
+.botones a:hover {
+    background: aqua;
+    color: #111;
+}
+
+/*PARA CELULARES*/
+@media (max-width:768px) {
+
+       .proyectos {
+        margin: 40px 15px;
+    }
+      .contenedor-proyectos {
+        gap: 30px;
+    }
+
+    .proyecto {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .proyecto img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        margin: 15px 0;
+    }
+
+     .proyecto h3 {
+        font-size: 16px;
+     }
+     .proyecto p{
+        font-size: 13px;
+     }
+      .botones a {
+        font-size: 13px;
+      }
+}
+ /************************CONTACTO***************************/
+.contacto h3 {
+    text-align: center;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    /* Muy suave */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.contenedor-contacto {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenedor-contacto i {
+    color: aqua;
+    font-size: 22px;
+}
+
+.contenedor-contacto a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contenedor-contacto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contenedor-contacto li {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contenedor-contacto a:hover {
+    color: aqua;
+}
+
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: rgba(255, 255, 255, .75);
+    margin-bottom: 20px;
+}
+
+/*PARA CELULARES*/
+@media (max-width:768px) {
+    .contacto h3{
+        font-size:25px ;
+    }
+    .contacto h3::after{
+        width: 50px;
+    }
+    .contenedor-contacto a {
+        font-size: 15px;
+    }
+    .contenedor-contacto i{
+        font-size: 18px;
+    }
+    footer {
+        font-size: 12px;
+    }
+}
